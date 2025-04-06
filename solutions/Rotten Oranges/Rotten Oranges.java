@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int orangesRotting(int[][] mat) {
         if (mat == null || mat.length == 0)

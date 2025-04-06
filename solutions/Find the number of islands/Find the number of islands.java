@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     // Directions arrays for moving in 8 possible directions
     private static final int[] rowDir = { -1, -1, -1, 0, 0, 1, 1, 1 };
@@ -55,5 +57,51 @@ class Solution {
     // Helper function to check if a cell is within grid bounds
     private boolean isValid(char[][] grid, int row, int col) {
         return row >= 0 && row < grid.length && col >= 0 && col < grid[0].length;
+    }
+}
+
+// Version 2
+
+class Solution1 {
+    int[] dx = { -1, -1, 0, 1, 1, 1, 0, -1 };
+    int[] dy = { 0, 1, 1, 1, 0, -1, -1, -1 };
+
+    private boolean isValid(int i, int j, int n, int m, char[][] grid) {
+        return (i >= 0 && j >= 0 && i < n && j < m && grid[i][j] == 'L');
+    }
+
+    public int countIslands(char[][] grid) {
+        int n = grid.length;
+        int m = grid[0].length;
+        int count = 0;
+
+        Queue<int[]> queue = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == 'L') {
+                    count++;
+                    queue.offer(new int[] { i, j });
+
+                    while (!queue.isEmpty()) {
+                        int[] current = queue.poll();
+                        int x = current[0];
+                        int y = current[1];
+
+                        for (int k = 0; k < 8; k++) {
+                            int newX = x + dx[k];
+                            int newY = y + dy[k];
+
+                            if (isValid(newX, newY, n, m, grid)) {
+                                grid[newX][newY] = 's';
+                                queue.offer(new int[] { newX, newY });
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return count;
     }
 }
