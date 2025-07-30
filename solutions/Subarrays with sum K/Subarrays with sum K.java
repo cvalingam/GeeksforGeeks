@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int countSubarrays(int arr[], int k) {
         HashMap<Integer, Integer> mp = new HashMap<>();
