@@ -15,9 +15,8 @@ class Solution {
             if (prefixSum > 0)
                 maxLen = i + 1;
 
-            if (hm.containsKey(prefixSum - 1)) {
+            if (hm.containsKey(prefixSum - 1))
                 maxLen = Math.max(maxLen, i - hm.get(prefixSum - 1));
-            }
 
             if (!hm.containsKey(prefixSum))
                 hm.put(prefixSum, i);
