@@ -1,9 +1,5 @@
-
-// User function Template for Java
 class Solution {
-    // Function to find hIndex
     public int hIndex(int[] citations) {
-        int n = citations.length;
         int maxCitation = 0;
         for (int citation : citations)
             maxCitation = Math.max(maxCitation, citation);
@@ -13,6 +9,7 @@ class Solution {
             count[0]++;
             count[citation + 1]--;
         }
+
         for (int i = 1; i < count.length; i++)
             count[i] += count[i - 1];
 
