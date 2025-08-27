@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     // Function to count the number of possible triangles.
     static int countTriangles(int arr[]) {
