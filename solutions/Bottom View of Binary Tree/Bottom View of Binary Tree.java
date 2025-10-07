@@ -50,3 +50,42 @@ class Node {
         left = right = null;
     }
 }
+
+// Version 2
+
+class Solution1 {
+    class Pair1 {
+        Node node;
+        int hd;
+
+        Pair1(Node node, int hd) {
+            this.node = node;
+            this.hd = hd;
+        }
+    }
+
+    public ArrayList<Integer> bottomView(Node root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        Queue<Pair1> q = new LinkedList<>();
+        q.add(new Pair1(root, 0));
+
+        TreeMap<Integer, Node> map = new TreeMap<>();
+
+        while (!q.isEmpty()) {
+
+            Pair1 curr = q.poll();
+            map.put(curr.hd, curr.node);
+
+            if (curr.node.left != null)
+                q.add(new Pair1(curr.node.left, curr.hd - 1));
+            if (curr.node.right != null)
+                q.add(new Pair1(curr.node.right, curr.hd + 1));
+        }
+
+        for (int ele : map.keySet())
+            ans.add(map.get(ele).data);
+
+        return ans;
+    }
+}
