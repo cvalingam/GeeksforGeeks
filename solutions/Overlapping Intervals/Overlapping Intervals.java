@@ -1,7 +1,9 @@
+import java.util.*;
+
 class Solution {
-    public List<int[]> mergeOverlap(int[][] arr) {
-        Arrays.sort(arr, (i, j) -> (i[0] - j[0]));
-        List<int[]> ans = new ArrayList<>();
+    public ArrayList<int[]> mergeOverlap(int[][] arr) {
+        Arrays.sort(arr, (i, j) -> Integer.compare(i[0], j[0]));
+        ArrayList<int[]> ans = new ArrayList<>();
         int i = 0, n = arr.length;
         while (i < n) {
             int j = i + 1;
@@ -12,6 +14,7 @@ class Solution {
             ans.add(arr[i]);
             i = j;
         }
+
         return ans;
     }
 }
