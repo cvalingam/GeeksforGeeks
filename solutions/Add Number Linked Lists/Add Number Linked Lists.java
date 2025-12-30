@@ -1,3 +1,13 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
 class Solution {
     // Function to add two numbers represented by linked list.
     static Node addTwoLists(Node num1, Node num2) {
