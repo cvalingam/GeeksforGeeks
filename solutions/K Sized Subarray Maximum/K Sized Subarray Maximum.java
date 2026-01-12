@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     // Function to find maximum of each subarray of size k.
     public ArrayList<Integer> max_of_subarrays(int k, int arr[]) {
