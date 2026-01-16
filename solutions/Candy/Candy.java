@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int minCandy(int arr[]) {
         int n = arr.length;
