@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     static boolean canAttend(int[][] arr) {
         Arrays.sort(arr, (a, b) -> a[0] - b[0]);
