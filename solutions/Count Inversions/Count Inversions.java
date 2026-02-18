@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     // Function to count inversions in the array.
     static int inversionCount(int arr[]) {
