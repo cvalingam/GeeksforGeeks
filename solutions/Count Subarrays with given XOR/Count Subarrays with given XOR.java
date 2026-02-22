@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public long subarrayXor(int arr[], int k) {
         long n = arr.length;
@@ -11,6 +13,7 @@ class Solution {
             cnt += map.getOrDefault(target, 0L);
             map.put(prefixxor, map.getOrDefault(prefixxor, 0L) + 1L);
         }
+        
         return cnt;
     }
 }
