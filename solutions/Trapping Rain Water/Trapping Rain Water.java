@@ -14,6 +14,7 @@ class Solution {
 
         for (int i = 0; i < n; i++)
             ans += Math.min(pre[i], post[i]) - arr[i];
+        
         return ans;
     }
 }
