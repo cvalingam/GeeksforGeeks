@@ -17,7 +17,7 @@ class Solution {
             if (j < n)
                 currXOR ^= arr[j];
         }
-        
+
         return maxXOR;
     }
 }
