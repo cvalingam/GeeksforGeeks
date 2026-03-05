@@ -23,6 +23,7 @@ class Solution {
             if (map.size() == k)
                 maxLen = Math.max(maxLen, i - left + 1);
         }
+
         return maxLen;
     }
 }
