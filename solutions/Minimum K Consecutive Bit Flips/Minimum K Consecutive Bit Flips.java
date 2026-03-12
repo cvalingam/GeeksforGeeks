@@ -17,6 +17,7 @@ class Solution {
                 flips++;
             }
         }
+        
         return flips;
     }
 }
